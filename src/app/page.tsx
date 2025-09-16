@@ -139,7 +139,7 @@ export default function HomePage() {
 
         {/* Main Content Cards */}
       <div className="max-w-7xl mx-auto px-4 pb-20">
-        <div className="space-y-60">
+        <div className="space-y-48">
           {/* First Card */}
           <TeamDetailCard />
 
