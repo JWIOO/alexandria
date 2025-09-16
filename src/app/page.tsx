@@ -3,6 +3,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import Image from 'next/image';
 
 export default function HomePage() {
@@ -62,57 +68,77 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Search Bar Section */}
-      <div className="py-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
-            {/* Category Dropdown */}
-            <div className="relative">
-              <Button variant="outline" className="bg-[#1c1e18]/60 border-white/15 text-white backdrop-blur-md hover:bg-[#1c1e18]/80 w-full sm:w-auto">
-                필수형
-                <Image
-                  src="https://c.animaapp.com/aIMdOiel/img/vector.svg"
-                  alt="dropdown"
-                  width={20}
-                  height={15}
-                  className="ml-2"
-                />
-              </Button>
-            </div>
+        {/* Search Bar Section */}
+        <div className="px-4 py-12">
+            <div className="max-w-6xl mx-auto space-y-4">
+                {/* 버튼 그룹 */}
+                <div className="flex gap-2">
+                    {/* 필수형 드롭다운 */}
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <div className="flex items-center w-40 h-14 cursor-pointer bg-stone-900/60 border-t border-b border-white/20 backdrop-blur-[6px] px-4">
+                                <span className="text-white text-base font-normal font-['Sora']">필수형</span>
+                                <Image
+                                    src="https://c.animaapp.com/aIMdOiel/img/vector.svg"
+                                    alt="dropdown"
+                                    width={20}
+                                    height={15}
+                                    className="ml-2"
+                                />
+                            </div>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="w-40 bg-[#1c1e18]/95 border border-white/20">
+                            <DropdownMenuItem className="text-white">PXO-103</DropdownMenuItem>
+                            <DropdownMenuItem className="text-white">PXO116-2018</DropdownMenuItem>
+                            <DropdownMenuItem className="text-white">기타</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
 
-            {/* Hashtag Dropdown */}
-            <div className="relative">
-              <Button variant="outline" className="bg-[#1c1e18]/60 border-white/15 text-white backdrop-blur-md hover:bg-[#1c1e18]/80 w-full sm:w-auto">
-                해시태그
-                <Image
-                  src="https://c.animaapp.com/aIMdOiel/img/vector-1.svg"
-                  alt="dropdown"
-                  width={20}
-                  height={15}
-                  className="ml-2"
-                />
-              </Button>
-            </div>
+                    {/* 해시태그 드롭다운 */}
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <div className="flex items-center w-40 h-14 cursor-pointer bg-stone-900/60 border-t border-b border-white/20 backdrop-blur-[6px] px-4">
+                                <span className="text-white text-base font-normal font-['Sora']">해시태그</span>
+                                <Image
+                                    src="https://c.animaapp.com/aIMdOiel/img/vector-1.svg"
+                                    alt="dropdown"
+                                    width={20}
+                                    height={15}
+                                    className="ml-2"
+                                />
+                            </div>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="w-40 bg-[#1c1e18]/95 border border-white/20">
+                            <DropdownMenuItem className="text-white">#디자인</DropdownMenuItem>
+                            <DropdownMenuItem className="text-white">#실무</DropdownMenuItem>
+                            <DropdownMenuItem className="text-white">#자료조사</DropdownMenuItem>
+                            <DropdownMenuItem className="text-white">#기획</DropdownMenuItem>
+                            <DropdownMenuItem className="text-white">#Tool</DropdownMenuItem>
+                            <DropdownMenuItem className="text-white">#기초</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                </div>
 
-            {/* Search Input */}
-            <div className="flex-1 relative">
-              <Input
-                placeholder="검색어를 입력하세요"
-                className="bg-[#1c1e18]/60 border-white/15 text-white placeholder:text-white/70 backdrop-blur-md focus:bg-[#1c1e18]/80"
-              />
-              <Image
-                src="https://c.animaapp.com/aIMdOiel/img/layer-1.svg"
-                alt="search"
-                width={18}
-                height={18}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2"
-              />
+                {/* 검색창 */}
+                <div className="flex items-center w-full h-14 bg-stone-900/60 border-t border-b border-white/20 backdrop-blur-[6px] px-4">
+                    <input
+                        type="text"
+                        placeholder="검색어를 입력하세요"
+                        className="flex-1 bg-transparent outline-none text-white placeholder:text-gray-400 font-['Sora']"
+                    />
+                    <Image
+                        src="https://c.animaapp.com/aIMdOiel/img/layer-1.svg"
+                        alt="search"
+                        width={18}
+                        height={18}
+                        className="ml-3"
+                    />
+                </div>
             </div>
-          </div>
         </div>
-      </div>
 
-      {/* Main Content Cards */}
+
+        {/* Main Content Cards */}
       <div className="max-w-7xl mx-auto px-4 pb-20">
         <div className="space-y-24">
           {/* First Card */}
@@ -128,202 +154,225 @@ export default function HomePage() {
     </div>
   );
 }
-
 function TeamDetailCard() {
-  return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      {/* Main Content */}
-      <div className="lg:col-span-2">
-        {/* Image Section */}
-        <div
-          className="relative h-[498px] w-full max-w-[420px] bg-cover bg-center rounded-lg overflow-hidden"
-          style={{
-            backgroundImage: "url('https://c.animaapp.com/aIMdOiel/img/image-3@2x.png')"
-          }}
-        >
-          {/* Badges */}
-          <div className="absolute top-5 left-5 flex gap-2">
-            <Badge className="bg-[#1c1e18]/60 text-[#a2ff32] backdrop-blur-md">필수형</Badge>
-            <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">PXO - 103</Badge>
-            <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">PXO116 - 2018</Badge>
-          </div>
-        </div>
+    return (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* 메인 콘텐츠 */}
+            <div className="lg:col-span-2 flex flex-col gap-6">
+                {/* 이미지 + 텍스트 2컬럼 */}
+                <div className="flex flex-col lg:flex-row gap-8">
+                    {/* 이미지 */}
+                    <div
+                        className="relative w-96 lg:w-[420px] h-[498px] rounded-lg overflow-hidden bg-cover bg-center"
+                        style={{
+                            backgroundImage:
+                                "url('https://c.animaapp.com/aIMdOiel/img/image-3@2x.png')",
+                        }}
+                    >
+                        <div className="absolute top-5 left-5 flex gap-2">
+                            <Badge className="bg-[#1c1e18]/60 text-[#a2ff32] backdrop-blur-md">
+                                필수형
+                            </Badge>
+                            <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">
+                                PXO-103
+                            </Badge>
+                            <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">
+                                PXO116-2018
+                            </Badge>
+                        </div>
+                    </div>
 
-        {/* Quote Section */}
-        <div
-          className="mt-6 p-5 rounded-lg bg-cover bg-center"
-          style={{
-            backgroundImage: "url('https://c.animaapp.com/aIMdOiel/img/about-me---1.png')"
-          }}
-        >
-          <p className="text-white text-center text-xl leading-relaxed">
-            &ldquo;아들아, 중고차를 팔 때, 단 1시간을 들여 정성들여 닦고 간단한 흠집만이라도 제거한다면, 그 간단한 &lsquo;정성&rsquo;만으로도 몇 백불은 더 받을 수 있단다.&rdquo;<br />
-            - 미국 애리조나 주 카운티 maxim -
-          </p>
-        </div>
+                    {/* 텍스트 */}
+                    <div className="flex-1 flex flex-col justify-between space-y-6">
+                        <div className="flex items-center gap-2">
+                            <span className="text-green-400 font-semibold">UNIT</span>
+                            <Image
+                                src="https://c.animaapp.com/aIMdOiel/img/group-131422-3@2x.png"
+                                alt="unit arrow"
+                                width={44}
+                                height={7}
+                            />
+                        </div>
 
-        {/* Details Section */}
-        <div className="mt-8">
-          <h2 className="text-white text-4xl font-bold mb-8">
-            [기획 TOOL] 가시화 : 잘 보이지 않는 기획은, 휴지통으로 간다.
-          </h2>
+                        <h2 className="text-white text-5xl font-bold leading-tight">
+                            [기획 TOOL] 가시화 : 잘 보이지 않는 기획은, 휴지통으로 간다.
+                        </h2>
 
-          <div className="space-y-6">
-            {/* Description */}
-            <div>
-              <h3 className="text-white text-xl font-semibold mb-2">설명</h3>
-              <p className="text-gray-400 leading-relaxed">
-                본 과정에서는 비즈니스 실무 기획 직무에 진입하는 모든 유망주들이, 자신이 구상하고 기획하는 모든 내용들을 실무자가 어떤 원칙 등을 통해 &lsquo;실제 기획 자료&rsquo; (기획안, 기획제안서, 기획 보고소 등)로 제대로 &lsquo;보여줄 수&rsquo; 있는지에 대해 초점을 맞추고 있습니다.
-              </p>
-            </div>
+                        <div className="space-y-6">
+                            {/* 설명 */}
+                            <div className="grid grid-cols-[80px_1fr] gap-6 items-start">
+                                <h3 className="text-white text-xl font-bold">설명</h3>
+                                <p className="text-gray-300 leading-relaxed">
+                                    본 과정에서는 비즈니스 실무 기획 직무에 진입하는 모든 유망주들이,
+                                    자신이 구상하고 기획하는 모든 내용들을 실무자가 어떤 원칙 등을 통해
+                                    ‘실제 기획 자료’ (기획안, 기획제안서, 기획 보고소 등)로 제대로 ‘보여줄 수’
+                                    있는지에 대해 초점을 맞추고 있습니다.
+                                </p>
+                            </div>
 
-            {/* Goal */}
-            <div>
-              <h3 className="text-white text-xl font-semibold mb-2">목표</h3>
-              <p className="text-gray-400 leading-relaxed">
-                본 유닛을 통해, 이후 팔랑크스 크루들의 기획안이 타 경쟁자들보다 &lsquo;높은 가시성&rsquo;을 통해, 우리 크루들이 구상하고 표현하는 기획을 효과적으로 전달할 수 있는 &lsquo;퀄리티&rsquo; 높은 기획안이 되는 것을 목표로 합니다.
-              </p>
-            </div>
+                            {/* 목표 */}
+                            <div className="grid grid-cols-[80px_1fr] gap-6 items-start">
+                                <h3 className="text-white text-xl font-bold">목표</h3>
+                                <p className="text-gray-300 leading-relaxed">
+                                    본 유닛을 통해, 이후 팔랑크스 크루들의 기획안이 타 경쟁자들보다
+                                    ‘높은 가시성’을 통해, 우리 크루들이 구상하고 표현하는 기획을
+                                    효과적으로 전달할 수 있는 ‘퀄리티’ 높은 기획안이 되는 것을 목표로 합니다.
+                                </p>
+                            </div>
+                        </div>
 
-            {/* Unit Badge */}
-            <div className="flex items-center gap-2">
-              <span className="text-green-400 font-semibold">UNIT</span>
-              <Image
-                src="https://c.animaapp.com/aIMdOiel/img/group-131422-3@2x.png"
-                alt="unit arrow"
-                width={44}
-                height={7}
-              />
-            </div>
 
-            {/* Tags */}
-            <div className="flex gap-2">
-              <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">#디자인</Badge>
-              <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">#브랜딩</Badge>
-              <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">#발표</Badge>
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div className="mt-8 space-y-4">
-            <div className="flex items-center gap-4">
-              <span className="text-white text-lg">진행 횟수</span>
-              <span className="text-[#adff00] text-lg font-bold">76회</span>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <span className="text-white text-lg">평점</span>
-              <span className="text-[#adff00] text-lg font-bold">9.5</span>
-              <span className="text-gray-500 text-lg">/ 10</span>
-              <Image
-                src="https://c.animaapp.com/aIMdOiel/img/star-3@2x.png"
-                alt="stars"
-                width={205}
-                height={16}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Sidebar */}
-      <div className="space-y-5">
-        {/* Steps Card */}
-        <Card className="bg-[#111410] border-white/15">
-          <CardContent className="p-8">
-            <h3 className="text-white text-xl font-semibold mb-6">구성 스텝</h3>
-
-            <div className="space-y-6">
-              <div>
-                <span className="text-white font-semibold">1)</span>
-                <p className="text-gray-400 mt-1">
-                  [도식화] 잘 보이는 기획은 도형을 가진다 (상하/좌우 배치, 방향, 기호, 색깔 등
-                </p>
-              </div>
-
-              <div>
-                <span className="text-white font-semibold">2)</span>
-                <p className="text-gray-400 mt-1">
-                  [그래프] 잘 보이는 기획은 그래프를 가진다. (원, 연속, 선, 막대, 지표, 비교 등)
-                </p>
-              </div>
-
-              <div>
-                <span className="text-white font-semibold">3)</span>
-                <p className="text-gray-400 mt-1">
-                  [강조화] 잘 보이는 기획은 포인트를 가진다. (배경 box, 밑줄, 빨간색, 볼드, 크기, 표시 등)
-                </p>
-              </div>
-
-              <hr className="border-gray-600" />
-
-              <div>
-                <span className="text-white font-semibold">우수 사례</span>
-                <div className="mt-2 flex items-center gap-2">
-                  <Image
-                    src="https://c.animaapp.com/aIMdOiel/img/107003-4-1@2x.png"
-                    alt="example"
-                    width={16}
-                    height={16}
-                  />
-                  <p className="text-gray-300 text-sm underline">
-                    GT 만나고 내 기획 인생 180도 달라진 썰 푼다. (GD 아님)
-                  </p>
+                        {/* 태그 */}
+                        <div className="flex gap-2">
+                            <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">
+                                #디자인
+                            </Badge>
+                            <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">
+                                #브랜딩
+                            </Badge>
+                            <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">
+                                #발표
+                            </Badge>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
 
-        {/* Review Card */}
-        <Card className="bg-[#111410] border-white/15">
-          <CardContent className="p-8">
-            <div className="flex items-start gap-4 mb-6">
-              <Image
-                src="https://c.animaapp.com/aIMdOiel/img/image-4@2x.png"
-                alt="reviewer"
-                width={120}
-                height={120}
-                className="rounded-full"
-              />
-              <div>
-                <h4 className="text-white text-xl font-semibold">이혜인</h4>
-                <div className="flex items-center gap-2 mt-1">
-                  <span className="text-gray-400">7기 브랜드팀</span>
-                  <Image
-                    src="https://c.animaapp.com/aIMdOiel/img/group-131422-4@2x.png"
-                    alt="arrow"
-                    width={44}
-                    height={7}
-                  />
+                {/* 인용구 */}
+                <div
+                    className="p-5 rounded-lg bg-cover bg-center"
+                    style={{
+                        backgroundImage:
+                            "url('https://c.animaapp.com/aIMdOiel/img/about-me---1.png')",
+                    }}
+                >
+                    <p className="text-white text-center text-lg leading-relaxed">
+                        “아들아, 중고차를 팔 때, 단 1시간을 들여 정성들여 닦고 간단한 흠집만이라도 제거한다면,
+                        그 간단한 ‘정성’만으로도 몇 백불은 더 받을 수 있단다.” <br />- 미국 애리조나 주 카운티 maxim -
+                    </p>
                 </div>
-              </div>
-              <Image
-                src="https://c.animaapp.com/aIMdOiel/img/--1.svg"
-                alt="quote"
-                width={77}
-                height={60}
-              />
+
+                {/* 진행횟수/평점 */}
+                <div className="space-y-3">
+                    <div className="flex items-center gap-4">
+                        <span className="text-white text-lg">진행 횟수</span>
+                        <span className="text-[#adff00] text-lg font-bold">76회</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <span className="text-white text-lg">평점</span>
+                        <span className="text-[#adff00] text-lg font-bold">9.5</span>
+                        <span className="text-gray-500 text-lg">/ 10</span>
+                        <Image
+                            src="https://c.animaapp.com/aIMdOiel/img/star-3@2x.png"
+                            alt="stars"
+                            width={205}
+                            height={16}
+                        />
+                    </div>
+                </div>
             </div>
 
-            <hr className="border-gray-600 mb-4" />
+            {/* 사이드바 */}
+            <div className="space-y-5">
+                {/* Steps Card */}
+                <Card className="bg-[#111410] border border-white/15">
+                    <CardContent className="p-8 space-y-8">
+                        {/* 제목 */}
+                        <h3 className="text-white text-2xl font-bold font-['Chakra_Petch']">
+                            구성 스텝
+                        </h3>
 
-            <Image
-              src="https://c.animaapp.com/aIMdOiel/img/star-3@2x.png"
-              alt="stars"
-              width={205}
-              height={16}
-              className="mb-4"
-            />
+                        {/* 스텝 리스트 */}
+                        <div className="space-y-6">
+                            <div className="flex gap-3">
+        <span className="text-white text-xl font-bold font-['Chakra_Petch']">
+          1)
+        </span>
+                                <p className="text-zinc-400 text-base font-normal font-['Sora'] leading-relaxed">
+                                    [도식화] 잘 보이는 기획은 도형을 가진다 (상하/좌우 배치, 방향, 기호, 색깔 등)
+                                </p>
+                            </div>
 
-            <p className="text-white leading-relaxed">
-              해당 내용 기획자 초보라면 특히나 꼭 읽어봐야 할 내용입니다 ~! 기초 다지기를 할때 매우 좋으니 꼭 읽고 똑똑하게 기획 하시기 바랍니다 :)
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
-  );
+                            <div className="flex gap-3">
+        <span className="text-white text-xl font-bold font-['Chakra_Petch']">
+          2)
+        </span>
+                                <p className="text-zinc-400 text-base font-normal font-['Sora'] leading-relaxed">
+                                    [그래프] 잘 보이는 기획은 그래프를 가진다. (원, 연속, 선, 막대, 지표, 비교 등)
+                                </p>
+                            </div>
+
+                            <div className="flex gap-3">
+        <span className="text-white text-xl font-bold font-['Chakra_Petch']">
+          3)
+        </span>
+                                <p className="text-zinc-400 text-base font-normal font-['Sora'] leading-relaxed">
+                                    [강조화] 잘 보이는 기획은 포인트를 가진다. (배경 box, 밑줄, 빨간색, 볼드, 크기, 표시 등)
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* 구분선 */}
+                        <hr className="border-t border-white/20" />
+
+                        {/* 우수 사례 */}
+                        <div className="space-y-2">
+                            <h4 className="text-white text-lg font-bold font-['Chakra_Petch']">
+                                우수 사례
+                            </h4>
+                            <div className="flex items-center gap-2 text-gray-300 text-sm">
+                                <Image
+                                    src="https://c.animaapp.com/aIMdOiel/img/107003-4-1@2x.png"
+                                    alt="link icon"
+                                    width={16}
+                                    height={16}
+                                />
+                                <span className="underline">
+          GT 만나고 내 기획 인생 180도 달라진 썰 푼다. (GD 아님)
+        </span>
+                            </div>
+                        </div>
+                    </CardContent>
+                </Card>
+
+
+                {/* Review Card */}
+                <Card className="bg-[#111410] border-white/15">
+                    <CardContent className="p-8">
+                        <div className="flex items-start gap-4 mb-6">
+                            <Image
+                                src="https://c.animaapp.com/aIMdOiel/img/image-4@2x.png"
+                                alt="reviewer"
+                                width={120}
+                                height={120}
+                                className="rounded-full"
+                            />
+                            <div>
+                                <h4 className="text-white text-xl font-semibold">이혜인</h4>
+                                <p className="text-gray-400 text-sm">7기 브랜드팀</p>
+                            </div>
+                            <Image
+                                src="https://c.animaapp.com/aIMdOiel/img/--1.svg"
+                                alt="quote"
+                                width={77}
+                                height={60}
+                            />
+                        </div>
+                        <hr className="border-gray-600 mb-4" />
+                        <Image
+                            src="https://c.animaapp.com/aIMdOiel/img/star-3@2x.png"
+                            alt="stars"
+                            width={205}
+                            height={16}
+                            className="mb-4"
+                        />
+                        <p className="text-white leading-relaxed">
+                            해당 내용 기획자 초보라면 특히나 꼭 읽어봐야 할 내용입니다...
+                        </p>
+                    </CardContent>
+                </Card>
+            </div>
+        </div>
+    )
 }
 
 function Footer() {
