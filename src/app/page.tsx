@@ -69,7 +69,7 @@ export default function HomePage() {
 
         {/* Search Bar Section */}
         <div className="px-4 py-12">
-            <div className="max-w-6xl mx-auto space-y-4">
+            <div className="max-w-7xl mx-auto space-y-4">
                 {/* 버튼 그룹 */}
                 <div className="flex gap-2">
                     {/* 필수형 드롭다운 */}
@@ -139,12 +139,15 @@ export default function HomePage() {
 
         {/* Main Content Cards */}
       <div className="max-w-7xl mx-auto px-4 pb-20">
-        <div className="space-y-24">
+        <div className="space-y-60">
           {/* First Card */}
           <TeamDetailCard />
 
           {/* Second Card */}
           <TeamDetailCard />
+
+            {/* Third Card */}
+            <TeamDetailCard />
         </div>
       </div>
 
