@@ -1,103 +1,458 @@
-import Image from "next/image";
+import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-[#121511] text-white">
+      {/* Header Section */}
+      <div className="relative">
+        {/* Hero Background */}
+        <div
+          className="relative h-[493px] w-full bg-cover bg-center"
+          style={{
+            backgroundImage: "url('https://c.animaapp.com/aIMdOiel/img/image.png')"
+          }}
+        >
+          {/* Breadcrumb Content */}
+          <div className="absolute top-[240px] left-1/2 transform -translate-x-1/2 text-center">
+            <h1 className="text-white text-4xl font-bold mb-4">알렉산드리아 도서관</h1>
+            <div className="flex items-center justify-center gap-2 text-white">
+              <span>HOME</span>
+              <Image
+                src="https://c.animaapp.com/aIMdOiel/img/group-131422@2x.png"
+                alt="arrow"
+                width={15}
+                height={1}
+              />
+              <span>OUR TEAM - DETAIL</span>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Navigation Header */}
+        <div className="absolute top-0 w-full h-[90px] bg-[#1c1f18]/60 backdrop-blur-md border-b border-white/15">
+          <div className="flex items-center justify-between px-6 h-full">
+            <Image
+              src="https://c.animaapp.com/aIMdOiel/img/logo.svg"
+              alt="logo"
+              width={45}
+              height={30}
+            />
+
+            {/* Navigation Menu */}
+            <nav className="hidden md:flex items-center gap-16">
+              <a href="#" className="text-white hover:text-green-400 transition-colors">HOME</a>
+              <a href="#" className="text-white hover:text-green-400 transition-colors">ABOUT</a>
+              <a href="#" className="text-white hover:text-green-400 transition-colors">SERVICES</a>
+              <a href="#" className="text-white hover:text-green-400 transition-colors">BLOG</a>
+              <a href="#" className="text-white hover:text-green-400 transition-colors">SHOP</a>
+            </nav>
+
+            <Image
+              src="https://c.animaapp.com/aIMdOiel/img/menu@2x.png"
+              alt="menu"
+              width={28}
+              height={25}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Search Bar Section */}
+      <div className="py-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
+            {/* Category Dropdown */}
+            <div className="relative">
+              <Button variant="outline" className="bg-[#1c1e18]/60 border-white/15 text-white backdrop-blur-md hover:bg-[#1c1e18]/80 w-full sm:w-auto">
+                필수형
+                <Image
+                  src="https://c.animaapp.com/aIMdOiel/img/vector.svg"
+                  alt="dropdown"
+                  width={20}
+                  height={15}
+                  className="ml-2"
+                />
+              </Button>
+            </div>
+
+            {/* Hashtag Dropdown */}
+            <div className="relative">
+              <Button variant="outline" className="bg-[#1c1e18]/60 border-white/15 text-white backdrop-blur-md hover:bg-[#1c1e18]/80 w-full sm:w-auto">
+                해시태그
+                <Image
+                  src="https://c.animaapp.com/aIMdOiel/img/vector-1.svg"
+                  alt="dropdown"
+                  width={20}
+                  height={15}
+                  className="ml-2"
+                />
+              </Button>
+            </div>
+
+            {/* Search Input */}
+            <div className="flex-1 relative">
+              <Input
+                placeholder="검색어를 입력하세요"
+                className="bg-[#1c1e18]/60 border-white/15 text-white placeholder:text-white/70 backdrop-blur-md focus:bg-[#1c1e18]/80"
+              />
+              <Image
+                src="https://c.animaapp.com/aIMdOiel/img/layer-1.svg"
+                alt="search"
+                width={18}
+                height={18}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content Cards */}
+      <div className="max-w-7xl mx-auto px-4 pb-20">
+        <div className="space-y-24">
+          {/* First Card */}
+          <TeamDetailCard />
+
+          {/* Second Card */}
+          <TeamDetailCard />
+        </div>
+      </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
+  );
+}
+
+function TeamDetailCard() {
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {/* Main Content */}
+      <div className="lg:col-span-2">
+        {/* Image Section */}
+        <div
+          className="relative h-[498px] w-full max-w-[420px] bg-cover bg-center rounded-lg overflow-hidden"
+          style={{
+            backgroundImage: "url('https://c.animaapp.com/aIMdOiel/img/image-3@2x.png')"
+          }}
+        >
+          {/* Badges */}
+          <div className="absolute top-5 left-5 flex gap-2">
+            <Badge className="bg-[#1c1e18]/60 text-[#a2ff32] backdrop-blur-md">필수형</Badge>
+            <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">PXO - 103</Badge>
+            <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">PXO116 - 2018</Badge>
+          </div>
+        </div>
+
+        {/* Quote Section */}
+        <div
+          className="mt-6 p-5 rounded-lg bg-cover bg-center"
+          style={{
+            backgroundImage: "url('https://c.animaapp.com/aIMdOiel/img/about-me---1.png')"
+          }}
+        >
+          <p className="text-white text-center text-xl leading-relaxed">
+            &ldquo;아들아, 중고차를 팔 때, 단 1시간을 들여 정성들여 닦고 간단한 흠집만이라도 제거한다면, 그 간단한 &lsquo;정성&rsquo;만으로도 몇 백불은 더 받을 수 있단다.&rdquo;<br />
+            - 미국 애리조나 주 카운티 maxim -
+          </p>
+        </div>
+
+        {/* Details Section */}
+        <div className="mt-8">
+          <h2 className="text-white text-4xl font-bold mb-8">
+            [기획 TOOL] 가시화 : 잘 보이지 않는 기획은, 휴지통으로 간다.
+          </h2>
+
+          <div className="space-y-6">
+            {/* Description */}
+            <div>
+              <h3 className="text-white text-xl font-semibold mb-2">설명</h3>
+              <p className="text-gray-400 leading-relaxed">
+                본 과정에서는 비즈니스 실무 기획 직무에 진입하는 모든 유망주들이, 자신이 구상하고 기획하는 모든 내용들을 실무자가 어떤 원칙 등을 통해 &lsquo;실제 기획 자료&rsquo; (기획안, 기획제안서, 기획 보고소 등)로 제대로 &lsquo;보여줄 수&rsquo; 있는지에 대해 초점을 맞추고 있습니다.
+              </p>
+            </div>
+
+            {/* Goal */}
+            <div>
+              <h3 className="text-white text-xl font-semibold mb-2">목표</h3>
+              <p className="text-gray-400 leading-relaxed">
+                본 유닛을 통해, 이후 팔랑크스 크루들의 기획안이 타 경쟁자들보다 &lsquo;높은 가시성&rsquo;을 통해, 우리 크루들이 구상하고 표현하는 기획을 효과적으로 전달할 수 있는 &lsquo;퀄리티&rsquo; 높은 기획안이 되는 것을 목표로 합니다.
+              </p>
+            </div>
+
+            {/* Unit Badge */}
+            <div className="flex items-center gap-2">
+              <span className="text-green-400 font-semibold">UNIT</span>
+              <Image
+                src="https://c.animaapp.com/aIMdOiel/img/group-131422-3@2x.png"
+                alt="unit arrow"
+                width={44}
+                height={7}
+              />
+            </div>
+
+            {/* Tags */}
+            <div className="flex gap-2">
+              <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">#디자인</Badge>
+              <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">#브랜딩</Badge>
+              <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">#발표</Badge>
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div className="mt-8 space-y-4">
+            <div className="flex items-center gap-4">
+              <span className="text-white text-lg">진행 횟수</span>
+              <span className="text-[#adff00] text-lg font-bold">76회</span>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <span className="text-white text-lg">평점</span>
+              <span className="text-[#adff00] text-lg font-bold">9.5</span>
+              <span className="text-gray-500 text-lg">/ 10</span>
+              <Image
+                src="https://c.animaapp.com/aIMdOiel/img/star-3@2x.png"
+                alt="stars"
+                width={205}
+                height={16}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Sidebar */}
+      <div className="space-y-5">
+        {/* Steps Card */}
+        <Card className="bg-[#111410] border-white/15">
+          <CardContent className="p-8">
+            <h3 className="text-white text-xl font-semibold mb-6">구성 스텝</h3>
+
+            <div className="space-y-6">
+              <div>
+                <span className="text-white font-semibold">1)</span>
+                <p className="text-gray-400 mt-1">
+                  [도식화] 잘 보이는 기획은 도형을 가진다 (상하/좌우 배치, 방향, 기호, 색깔 등
+                </p>
+              </div>
+
+              <div>
+                <span className="text-white font-semibold">2)</span>
+                <p className="text-gray-400 mt-1">
+                  [그래프] 잘 보이는 기획은 그래프를 가진다. (원, 연속, 선, 막대, 지표, 비교 등)
+                </p>
+              </div>
+
+              <div>
+                <span className="text-white font-semibold">3)</span>
+                <p className="text-gray-400 mt-1">
+                  [강조화] 잘 보이는 기획은 포인트를 가진다. (배경 box, 밑줄, 빨간색, 볼드, 크기, 표시 등)
+                </p>
+              </div>
+
+              <hr className="border-gray-600" />
+
+              <div>
+                <span className="text-white font-semibold">우수 사례</span>
+                <div className="mt-2 flex items-center gap-2">
+                  <Image
+                    src="https://c.animaapp.com/aIMdOiel/img/107003-4-1@2x.png"
+                    alt="example"
+                    width={16}
+                    height={16}
+                  />
+                  <p className="text-gray-300 text-sm underline">
+                    GT 만나고 내 기획 인생 180도 달라진 썰 푼다. (GD 아님)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Review Card */}
+        <Card className="bg-[#111410] border-white/15">
+          <CardContent className="p-8">
+            <div className="flex items-start gap-4 mb-6">
+              <Image
+                src="https://c.animaapp.com/aIMdOiel/img/image-4@2x.png"
+                alt="reviewer"
+                width={120}
+                height={120}
+                className="rounded-full"
+              />
+              <div>
+                <h4 className="text-white text-xl font-semibold">이혜인</h4>
+                <div className="flex items-center gap-2 mt-1">
+                  <span className="text-gray-400">7기 브랜드팀</span>
+                  <Image
+                    src="https://c.animaapp.com/aIMdOiel/img/group-131422-4@2x.png"
+                    alt="arrow"
+                    width={44}
+                    height={7}
+                  />
+                </div>
+              </div>
+              <Image
+                src="https://c.animaapp.com/aIMdOiel/img/--1.svg"
+                alt="quote"
+                width={77}
+                height={60}
+              />
+            </div>
+
+            <hr className="border-gray-600 mb-4" />
+
+            <Image
+              src="https://c.animaapp.com/aIMdOiel/img/star-3@2x.png"
+              alt="stars"
+              width={205}
+              height={16}
+              className="mb-4"
+            />
+
+            <p className="text-white leading-relaxed">
+              해당 내용 기획자 초보라면 특히나 꼭 읽어봐야 할 내용입니다 ~! 기초 다지기를 할때 매우 좋으니 꼭 읽고 똑똑하게 기획 하시기 바랍니다 :)
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="relative bg-transparent border-t border-white/15">
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Company Description */}
+          <div className="md:col-span-1">
+            <Image
+              src="https://c.animaapp.com/aIMdOiel/img/logo-1@2x.png"
+              alt="logo"
+              width={179}
+              height={104}
+              className="mb-4"
+            />
+            <p className="text-gray-400 mb-6">
+              Sed libero odio, sollicitudin a porttitor ac, tempor eu nisi. Nulla sit amet suscipit dolormentum mauris in, rutrum augue.
+            </p>
+
+            {/* App Store Buttons */}
+            <div className="flex gap-4">
+              <div className="relative">
+                <Image
+                  src="https://c.animaapp.com/aIMdOiel/img/rectangle-176.svg"
+                  alt="app store"
+                  width={204}
+                  height={69}
+                />
+                <span className="absolute top-2 left-16 text-gray-400 text-sm">Get it on</span>
+                <Image
+                  src="https://c.animaapp.com/aIMdOiel/img/group-131463@2x.png"
+                  alt="app store text"
+                  width={105}
+                  height={21}
+                  className="absolute bottom-4 left-16"
+                />
+                <Image
+                  src="https://c.animaapp.com/aIMdOiel/img/group-131462@2x.png"
+                  alt="apple"
+                  width={35}
+                  height={39}
+                  className="absolute top-4 left-6"
+                />
+              </div>
+
+              <div className="relative">
+                <Image
+                  src="https://c.animaapp.com/aIMdOiel/img/rectangle-176-1.svg"
+                  alt="google play"
+                  width={184}
+                  height={69}
+                />
+                <span className="absolute top-2 left-14 text-gray-400 text-sm">Get it on</span>
+                <Image
+                  src="https://c.animaapp.com/aIMdOiel/img/group-131465@2x.png"
+                  alt="google play text"
+                  width={98}
+                  height={21}
+                  className="absolute bottom-4 left-14"
+                />
+                <Image
+                  src="https://c.animaapp.com/aIMdOiel/img/group-131466@2x.png"
+                  alt="google play"
+                  width={33}
+                  height={40}
+                  className="absolute top-3 left-5"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Useful Links */}
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-6">USEFUL LINKS</h3>
+            <div className="text-gray-400 space-y-2">
+              <div>Home</div>
+              <div>About Us</div>
+              <div>Appointment</div>
+              <div>Services</div>
+              <div>Blog</div>
+            </div>
+          </div>
+
+          {/* Utility Pages */}
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-6">UTILITY PAGES</h3>
+            <div className="text-gray-400 space-y-2">
+              <div>FAQ/Return</div>
+              <div>Privacy/Terms</div>
+              <div>Gift Cards</div>
+              <div>Sizing Guide</div>
+              <div>Accessibility</div>
+            </div>
+          </div>
+
+          {/* Miscellaneous */}
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-6">MISCELLANEOUS</h3>
+            <div className="text-gray-400 space-y-2">
+              <div>Community</div>
+              <div>FAQs</div>
+              <div>License</div>
+              <div>Privacy</div>
+              <div>Contact Us</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-white/15 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-8">
+              <span className="text-gray-400">Privacy policy</span>
+              <span className="text-gray-400">|</span>
+              <span className="text-gray-400">Terms & Conditions</span>
+            </div>
+
+            <span className="text-gray-400">©Designthemes all rights Reserved</span>
+
+            <Image
+              src="https://c.animaapp.com/aIMdOiel/img/group-131478@2x.png"
+              alt="social media"
+              width={255}
+              height={61}
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }
