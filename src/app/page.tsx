@@ -1,8 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -156,14 +155,14 @@ export default function HomePage() {
 }
 function TeamDetailCard() {
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[2.5fr_1fr] gap-14">
             {/* 메인 콘텐츠 */}
-            <div className="lg:col-span-2 flex flex-col gap-6">
+            <div className="flex flex-col gap-8 flex-1">
                 {/* 이미지 + 텍스트 2컬럼 */}
                 <div className="flex flex-col lg:flex-row gap-8">
                     {/* 이미지 */}
                     <div
-                        className="relative w-96 lg:w-[420px] h-[498px] rounded-lg overflow-hidden bg-cover bg-center"
+                        className="relative w-[320px] lg:w-[420px] h-[498px] overflow-hidden bg-cover bg-center flex-shrink-0"
                         style={{
                             backgroundImage:
                                 "url('https://c.animaapp.com/aIMdOiel/img/image-3@2x.png')",
@@ -183,9 +182,9 @@ function TeamDetailCard() {
                     </div>
 
                     {/* 텍스트 */}
-                    <div className="flex-1 flex flex-col justify-between space-y-6">
+                    <div className="flex-grow flex flex-col gap-6">
                         <div className="flex items-center gap-2">
-                            <span className="text-green-400 font-semibold">UNIT</span>
+                            <span className="text-[#a2ff32] font-semibold">UNIT</span>
                             <Image
                                 src="https://c.animaapp.com/aIMdOiel/img/group-131422-3@2x.png"
                                 alt="unit arrow"
@@ -195,15 +194,16 @@ function TeamDetailCard() {
                         </div>
 
                         <h2 className="text-white text-5xl font-bold leading-tight">
-                            [기획 TOOL] 가시화 : 잘 보이지 않는 기획은, 휴지통으로 간다.
+                            [기획 TOOL] 가시화 잘 보이지 않는 기획은, 휴지통으로 간다.
                         </h2>
 
                         <div className="space-y-6">
                             {/* 설명 */}
-                            <div className="grid grid-cols-[80px_1fr] gap-6 items-start">
-                                <h3 className="text-white text-xl font-bold">설명</h3>
-                                <p className="text-gray-300 leading-relaxed">
-                                    본 과정에서는 비즈니스 실무 기획 직무에 진입하는 모든 유망주들이,
+                            <div className="grid grid-cols-[50px_1fr]  items-start">
+                                <h3 className="text-white text-lg font-bold">설명</h3>
+                                <p
+                                    className="text-[#BABABA] font-['Sora'] text-base font-normal leading-[26px] tracking-[-0.8px]"
+                                >                                    본 과정에서는 비즈니스 실무 기획 직무에 진입하는 모든 유망주들이,
                                     자신이 구상하고 기획하는 모든 내용들을 실무자가 어떤 원칙 등을 통해
                                     ‘실제 기획 자료’ (기획안, 기획제안서, 기획 보고소 등)로 제대로 ‘보여줄 수’
                                     있는지에 대해 초점을 맞추고 있습니다.
@@ -211,10 +211,11 @@ function TeamDetailCard() {
                             </div>
 
                             {/* 목표 */}
-                            <div className="grid grid-cols-[80px_1fr] gap-6 items-start">
-                                <h3 className="text-white text-xl font-bold">목표</h3>
-                                <p className="text-gray-300 leading-relaxed">
-                                    본 유닛을 통해, 이후 팔랑크스 크루들의 기획안이 타 경쟁자들보다
+                            <div className="grid grid-cols-[50px_1fr]  items-start">
+                                <h3 className="text-white text-lg font-bold">목표</h3>
+                                <p
+                                    className="text-[#BABABA] font-['Sora'] text-base font-normal leading-[26px] tracking-[-0.8px]"
+                                >                                    본 유닛을 통해, 이후 팔랑크스 크루들의 기획안이 타 경쟁자들보다
                                     ‘높은 가시성’을 통해, 우리 크루들이 구상하고 표현하는 기획을
                                     효과적으로 전달할 수 있는 ‘퀄리티’ 높은 기획안이 되는 것을 목표로 합니다.
                                 </p>
@@ -239,14 +240,15 @@ function TeamDetailCard() {
 
                 {/* 인용구 */}
                 <div
-                    className="p-5 rounded-lg bg-cover bg-center"
+                    className="p-5 bg-cover bg-center"
                     style={{
                         backgroundImage:
                             "url('https://c.animaapp.com/aIMdOiel/img/about-me---1.png')",
                     }}
                 >
-                    <p className="text-white text-center text-lg leading-relaxed">
-                        “아들아, 중고차를 팔 때, 단 1시간을 들여 정성들여 닦고 간단한 흠집만이라도 제거한다면,
+                    <p className="text-white text-center text-[24px] leading-[34px] font-bold tracking-[-0.02em]" style={{ fontFamily: 'GapyeongHanseokbongBigBrush' }}>
+
+                    “아들아, 중고차를 팔 때, 단 1시간을 들여 정성들여 닦고 간단한 흠집만이라도 제거한다면,
                         그 간단한 ‘정성’만으로도 몇 백불은 더 받을 수 있단다.” <br />- 미국 애리조나 주 카운티 maxim -
                     </p>
                 </div>
@@ -274,8 +276,8 @@ function TeamDetailCard() {
             {/* 사이드바 */}
             <div className="space-y-5">
                 {/* Steps Card */}
-                <Card className="bg-[#111410] border border-white/15">
-                    <CardContent className="p-8 space-y-8">
+                <Card className="bg-[#111410] border border-white/15 rounded-none">
+                    <CardContent className="pt-4 space-y-3">
                         {/* 제목 */}
                         <h3 className="text-white text-2xl font-bold font-['Chakra_Petch']">
                             구성 스텝
@@ -336,18 +338,18 @@ function TeamDetailCard() {
 
 
                 {/* Review Card */}
-                <Card className="bg-[#111410] border-white/15">
-                    <CardContent className="p-8">
-                        <div className="flex items-start gap-4 mb-6">
-                            <Image
-                                src="https://c.animaapp.com/aIMdOiel/img/image-4@2x.png"
-                                alt="reviewer"
-                                width={120}
-                                height={120}
-                                className="rounded-full"
-                            />
-                            <div>
-                                <h4 className="text-white text-xl font-semibold">이혜인</h4>
+                <Card className="bg-[#111410] border-white/15 rounded-none">
+                    <CardContent className="pt-1 pb-4 ">
+                        {/* 상단 프로필 */}
+                        <div className="flex items-start justify-between mb-6">
+                            <div className="flex flex-col items-start">
+                                <Image
+                                    src="https://c.animaapp.com/aIMdOiel/img/image-4@2x.png"
+                                    alt="reviewer"
+                                    width={120}
+                                    height={120}
+                                />
+                                <h4 className="mt-4 text-white text-xl font-semibold">이혜인</h4>
                                 <p className="text-gray-400 text-sm">7기 브랜드팀</p>
                             </div>
                             <Image
@@ -357,7 +359,10 @@ function TeamDetailCard() {
                                 height={60}
                             />
                         </div>
+
                         <hr className="border-gray-600 mb-4" />
+
+                        {/* 별점 */}
                         <Image
                             src="https://c.animaapp.com/aIMdOiel/img/star-3@2x.png"
                             alt="stars"
@@ -365,11 +370,14 @@ function TeamDetailCard() {
                             height={16}
                             className="mb-4"
                         />
+
+                        {/* 리뷰 텍스트 */}
                         <p className="text-white leading-relaxed">
                             해당 내용 기획자 초보라면 특히나 꼭 읽어봐야 할 내용입니다...
                         </p>
                     </CardContent>
                 </Card>
+
             </div>
         </div>
     )
