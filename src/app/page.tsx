@@ -17,7 +17,7 @@ export default function HomePage() {
       <div className="relative">
         {/* Hero Background */}
         <div
-          className="relative w-[1920px] h-[493px] w-full bg-cover bg-center"
+          className="relative w-full h-[493px] bg-cover bg-center"
           style={{
             backgroundImage: "url('https://c.animaapp.com/aIMdOiel/img/image.png')"
           }}
@@ -122,7 +122,7 @@ export default function HomePage() {
 
 
                 <div
-                    className="flex items-center w-[1460px] h-14 bg-stone-900/60 border-t border-b border-white/20 backdrop-blur-[6px] px-4">
+                    className="flex items-center w-full h-14 bg-stone-900/60 border-t border-b border-white/20 backdrop-blur-[6px] px-4">
                     <input
                         type="text"
                         placeholder="검색어를 입력하세요"
@@ -224,7 +224,7 @@ function TeamDetailCard() {
                         {/*    [기획 TOOL] 가시화 잘 보이지 않는 기획은, 휴지통으로 간다.*/}
                         {/*</h2>*/}
                         <div
-                            className="w-[505px] justify-start text-white text-5xl font-bold font-['Pretendard'] uppercase  leading-tight">[기획
+                            className="justify-start w-[505px] text-white text-5xl font-bold font-['Pretendard'] uppercase  leading-tight">[기획
                             Tool] 가시화 : 잘 보이지 않는 기획은, 휴지통으로 간다.
                         </div>
 
@@ -313,7 +313,7 @@ function TeamDetailCard() {
             </div>
 
             {/* 사이드바 */}
-            <div className="space-y-5">
+            <div className="space-y-5 w-96 h-96">
                 {/* Steps Card */}
                 <Card className="bg-[#111410] border border-white/15 rounded-none">
                     <CardContent className="pt-4 space-y-3">
@@ -331,7 +331,7 @@ function TeamDetailCard() {
           1)
         </span>
                                 <p
-                                    className="w-80 justify-start text-neutral-400 text-base font-normal font-sora leading-relaxed">[도식화]
+                                    className="justify-start text-neutral-400 text-base font-normal font-sora leading-relaxed">[도식화]
                                     잘 보이는 기획은 도형을 가진다 (상하/좌우 배치, 방향, 기호, 색깔 등
                                 </p>
                             </div>
@@ -341,7 +341,7 @@ function TeamDetailCard() {
           2)
         </span>
                                 <p
-                                    className="w-80 justify-start text-neutral-400 text-base font-normal font-sora leading-relaxed">[그래프]
+                                    className="justify-start text-neutral-400 text-base font-normal font-sora leading-relaxed">[그래프]
                                     잘 보이는 기획은 그래프를 가진다. (원, 연속, 선, 막대, 지표, 비교 등)
                                 </p>
                             </div>
@@ -351,7 +351,7 @@ function TeamDetailCard() {
           3)
         </span>
                                 <p
-                                    className="w-80 justify-start text-neutral-400 text-base font-normal font-sora leading-relaxed">[강조화]
+                                    className="justify-start text-neutral-400 text-base font-normal font-sora leading-relaxed">[강조화]
                                     잘 보이는 기획은 포인트를 가진다. (배경 box, 밑줄, 빨간색, 볼드, 크기, 표시 등)
                                 </p>
                             </div>
@@ -374,7 +374,7 @@ function TeamDetailCard() {
                             <h4 className="text-white text-lg font-bold font-chakra-korean">
                                 우수 사례
                             </h4>
-                            <div className="w-80 justify-start text-zinc-400 text-base font-normal flex items-center gap-2 ">
+                            <div className="justify-start text-zinc-400 text-base font-normal flex items-center gap-2 ">
                                 <Image
                                     src="https://c.animaapp.com/aIMdOiel/img/107003-4-1@2x.png"
                                     alt="link icon"
@@ -428,7 +428,7 @@ function TeamDetailCard() {
 
                         {/* 리뷰 텍스트 */}
                         <div
-                            className="w-96 justify-start text-white text-xl font-semibold font-chakra-korean uppercase leading-loose">해당
+                            className="justify-start text-white text-xl font-semibold font-chakra-korean uppercase leading-loose">해당
                             내용 기획자 초보라면 특히나 꼭 읽어봐야 할 내용입니다 ~! 기초 다지기를 할때 매우 좋으니 꼭 읽고 똑똑하게 기획 하시기 바랍니다 :)
                         </div>
                     </CardContent>
