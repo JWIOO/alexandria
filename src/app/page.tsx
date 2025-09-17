@@ -17,7 +17,7 @@ export default function HomePage() {
       <div className="relative">
         {/* Hero Background */}
         <div
-          className="relative h-[493px] w-full bg-cover bg-center"
+          className="relative w-[1920px] h-[493px] w-full bg-cover bg-center"
           style={{
             backgroundImage: "url('https://c.animaapp.com/aIMdOiel/img/image.png')"
           }}
@@ -75,8 +75,9 @@ export default function HomePage() {
                     {/* 필수형 드롭다운 */}
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <div className="flex items-center w-40 h-14 cursor-pointer bg-stone-900/60 border-t border-b border-white/20 backdrop-blur-[6px] px-4">
-                                <span className="text-white text-base font-normal font-['Sora']">필수형</span>
+                            <div
+                                className="flex items-center w-40 h-14 cursor-pointer bg-stone-900/60 border-t border-b border-white/20 backdrop-blur-[6px] px-4">
+                                <span className="text-white text-base font-normal font-sora">필수형</span>
                                 <Image
                                     src="https://c.animaapp.com/aIMdOiel/img/vector.svg"
                                     alt="dropdown"
@@ -96,8 +97,9 @@ export default function HomePage() {
                     {/* 해시태그 드롭다운 */}
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <div className="flex items-center w-40 h-14 cursor-pointer bg-stone-900/60 border-t border-b border-white/20 backdrop-blur-[6px] px-4">
-                                <span className="text-white text-base font-normal font-['Sora']">해시태그</span>
+                            <div
+                                className="flex items-center w-40 h-14 cursor-pointer bg-stone-900/60 border-t border-b border-white/20 backdrop-blur-[6px] px-4">
+                                <span className="text-white text-base font-normal font-sora">해시태그</span>
                                 <Image
                                     src="https://c.animaapp.com/aIMdOiel/img/vector-1.svg"
                                     alt="dropdown"
@@ -118,12 +120,13 @@ export default function HomePage() {
                     </DropdownMenu>
                 </div>
 
-                {/* 검색창 */}
-                <div className="flex items-center w-full h-14 bg-stone-900/60 border-t border-b border-white/20 backdrop-blur-[6px] px-4">
+
+                <div
+                    className="flex items-center w-[1460px] h-14 bg-stone-900/60 border-t border-b border-white/20 backdrop-blur-[6px] px-4">
                     <input
                         type="text"
                         placeholder="검색어를 입력하세요"
-                        className="flex-1 bg-transparent outline-none text-white placeholder:text-gray-400 font-['Sora']"
+                        className="flex-1 bg-transparent outline-none text-white placeholder:text-gray-400 font-sora"
                     />
                     <Image
                         src="https://c.animaapp.com/aIMdOiel/img/layer-1.svg"
@@ -138,7 +141,7 @@ export default function HomePage() {
 
 
         {/* Main Content Cards */}
-      <div className="max-w-7xl mx-auto px-4 pb-20">
+        <div className="max-w-7xl mx-auto px-4 pb-20">
         <div className="space-y-48">
           {/* First Card */}
           <TeamDetailCard />
@@ -165,22 +168,43 @@ function TeamDetailCard() {
                 <div className="flex flex-col lg:flex-row gap-8">
                     {/* 이미지 */}
                     <div
-                        className="relative w-[320px] lg:w-[420px] h-[498px] overflow-hidden bg-cover bg-center flex-shrink-0"
+                        className="relative w-96 h-[498px] lg:w-[420px] overflow-hidden bg-cover bg-center flex-shrink-0"
                         style={{
                             backgroundImage:
                                 "url('https://c.animaapp.com/aIMdOiel/img/image-3@2x.png')",
                         }}
                     >
                         <div className="absolute top-5 left-5 flex gap-2">
-                            <Badge className="bg-[#1c1e18]/60 text-[#a2ff32] backdrop-blur-md">
-                                필수형
-                            </Badge>
-                            <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">
-                                PXO-103
-                            </Badge>
-                            <Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">
-                                PXO116-2018
-                            </Badge>
+                            <div
+                                className="h-6 px-1.5 bg-stone-900/60 backdrop-blur-[6px] inline-flex justify-start items-center gap-2.5">
+                                <div
+                                    className="justify-start text-[#A3FF32] text-sm font-semibold font-sora uppercase leading-normal">필수형
+                                </div>
+                            </div>
+                            <div
+                                className="h-6 px-1.5 bg-stone-900/60 backdrop-blur-[6px] inline-flex justify-start items-center gap-2.5">
+                                <div
+                                    className="justify-start text-white text-sm font-semibold font-sora uppercase leading-normal">PXO
+                                    - 103
+                                </div>
+                            </div>
+                            <div
+                                className="h-6 px-1.5 bg-stone-900/60 backdrop-blur-[6px] inline-flex justify-start items-center gap-2.5">
+                                <div
+                                    className="justify-start text-white text-sm font-semibold font-sora uppercase leading-normal">PXO116
+                                    - 2018
+                                </div>
+                            </div>
+                            {/*<Badge className="bg-[#1c1e18]/60 text-[#a2ff32] backdrop-blur-md">*/}
+                            {/*    필수형*/}
+                            {/*</Badge>*/}
+                            {/*<Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">*/}
+                            {/*    PXO-103*/}
+                            {/*</Badge>*/}
+
+                            {/*<Badge className="bg-[#1c1e18]/60 text-white backdrop-blur-md">*/}
+                            {/*    PXO116-2018*/}
+                            {/*</Badge>*/}
                         </div>
                     </div>
 
@@ -196,17 +220,21 @@ function TeamDetailCard() {
                             />
                         </div>
 
-                        <h2 className="text-white text-5xl font-bold leading-tight">
-                            [기획 TOOL] 가시화 잘 보이지 않는 기획은, 휴지통으로 간다.
-                        </h2>
+                        {/*<h2 className="text-white text-5xl font-bold leading-tight">*/}
+                        {/*    [기획 TOOL] 가시화 잘 보이지 않는 기획은, 휴지통으로 간다.*/}
+                        {/*</h2>*/}
+                        <div
+                            className="w-[505px] justify-start text-white text-5xl font-bold font-['Pretendard'] uppercase  leading-tight">[기획
+                            Tool] 가시화 : 잘 보이지 않는 기획은, 휴지통으로 간다.
+                        </div>
 
                         <div className="space-y-6">
                             {/* 설명 */}
                             <div className="grid grid-cols-[50px_1fr]  items-start">
                                 <h3 className="text-white text-lg font-bold">설명</h3>
                                 <p
-                                    className="text-[#BABABA] font-['Sora'] text-base font-normal leading-[26px] tracking-[-0.8px]"
-                                >                                    본 과정에서는 비즈니스 실무 기획 직무에 진입하는 모든 유망주들이,
+                                    className="text-[#BABABA] font-sora text-base font-normal leading-[26px] tracking-[-0.8px]"
+                                > 본 과정에서는 비즈니스 실무 기획 직무에 진입하는 모든 유망주들이,
                                     자신이 구상하고 기획하는 모든 내용들을 실무자가 어떤 원칙 등을 통해
                                     ‘실제 기획 자료’ (기획안, 기획제안서, 기획 보고소 등)로 제대로 ‘보여줄 수’
                                     있는지에 대해 초점을 맞추고 있습니다.
@@ -217,8 +245,8 @@ function TeamDetailCard() {
                             <div className="grid grid-cols-[50px_1fr]  items-start">
                                 <h3 className="text-white text-lg font-bold">목표</h3>
                                 <p
-                                    className="text-[#BABABA] font-['Sora'] text-base font-normal leading-[26px] tracking-[-0.8px]"
-                                >                                    본 유닛을 통해, 이후 팔랑크스 크루들의 기획안이 타 경쟁자들보다
+                                    className="text-[#BABABA] font-sora text-base font-normal leading-[26px] tracking-[-0.8px]"
+                                > 본 유닛을 통해, 이후 팔랑크스 크루들의 기획안이 타 경쟁자들보다
                                     ‘높은 가시성’을 통해, 우리 크루들이 구상하고 표현하는 기획을
                                     효과적으로 전달할 수 있는 ‘퀄리티’ 높은 기획안이 되는 것을 목표로 합니다.
                                 </p>
@@ -257,15 +285,23 @@ function TeamDetailCard() {
                 </div>
 
                 {/* 진행횟수/평점 */}
-                <div className="space-y-3">
+                <div className="space-y-2">
                     <div className="flex items-center gap-4">
-                        <span className="text-white text-lg">진행 횟수</span>
-                        <span className="text-[#adff00] text-lg font-bold">76회</span>
+                        <div
+                            className="justify-start text-white text-3xl font-bold font-chakra-petch uppercase leading-10">진행
+                            횟수
+                        </div>
+                        <div
+                            className="justify-start text-[#A3FF32] text-3xl font-bold font-chakra-petch uppercase leading-10">76회
+                        </div>
                     </div>
                     <div className="flex items-center gap-4">
-                        <span className="text-white text-lg">평점</span>
-                        <span className="text-[#adff00] text-lg font-bold">9.5</span>
-                        <span className="text-gray-500 text-lg">/ 10</span>
+                        <div className="justify-start text-white text-3xl font-bold font-chakra-petch  uppercase leading-10">평점</div>
+                        <div
+                            className="justify-start text-[#A3FF32] text-3xl font-bold font-chakra-petch  uppercase leading-10">9.5
+                        </div>
+
+                        <div className="justify-start text-neutral-600 text-2xl font-bold font-chakra-petch uppercase leading-10">/ 10</div>
                         <Image
                             src="https://c.animaapp.com/aIMdOiel/img/star-3@2x.png"
                             alt="stars"
@@ -282,60 +318,76 @@ function TeamDetailCard() {
                 <Card className="bg-[#111410] border border-white/15 rounded-none">
                     <CardContent className="pt-4 space-y-3">
                         {/* 제목 */}
-                        <h3 className="text-white text-2xl font-bold font-['Chakra_Petch']">
+                        <div
+                            className="justify-start text-white text-3xl font-bold font-chakra-petch uppercase leading-10">
                             구성 스텝
-                        </h3>
+                        </div>
+
 
                         {/* 스텝 리스트 */}
                         <div className="space-y-6">
                             <div className="flex gap-3">
-        <span className="text-white text-xl font-bold font-['Chakra_Petch']">
+        <span className="text-white text-xl font-bold font-chakra-petch">
           1)
         </span>
-                                <p className="text-zinc-400 text-base font-normal font-['Sora'] leading-relaxed">
-                                    [도식화] 잘 보이는 기획은 도형을 가진다 (상하/좌우 배치, 방향, 기호, 색깔 등)
+                                <p
+                                    className="w-80 justify-start text-neutral-400 text-base font-normal font-sora leading-relaxed">[도식화]
+                                    잘 보이는 기획은 도형을 가진다 (상하/좌우 배치, 방향, 기호, 색깔 등
                                 </p>
                             </div>
 
                             <div className="flex gap-3">
-        <span className="text-white text-xl font-bold font-['Chakra_Petch']">
+        <span className="text-white text-xl font-bold font-chakra-petch">
           2)
         </span>
-                                <p className="text-zinc-400 text-base font-normal font-['Sora'] leading-relaxed">
-                                    [그래프] 잘 보이는 기획은 그래프를 가진다. (원, 연속, 선, 막대, 지표, 비교 등)
+                                <p
+                                    className="w-80 justify-start text-neutral-400 text-base font-normal font-sora leading-relaxed">[그래프]
+                                    잘 보이는 기획은 그래프를 가진다. (원, 연속, 선, 막대, 지표, 비교 등)
                                 </p>
                             </div>
 
                             <div className="flex gap-3">
-        <span className="text-white text-xl font-bold font-['Chakra_Petch']">
+        <span className="text-white text-xl font-bold font-chakra-petch">
           3)
         </span>
-                                <p className="text-zinc-400 text-base font-normal font-['Sora'] leading-relaxed">
-                                    [강조화] 잘 보이는 기획은 포인트를 가진다. (배경 box, 밑줄, 빨간색, 볼드, 크기, 표시 등)
+                                <p
+                                    className="w-80 justify-start text-neutral-400 text-base font-normal font-sora leading-relaxed">[강조화]
+                                    잘 보이는 기획은 포인트를 가진다. (배경 box, 밑줄, 빨간색, 볼드, 크기, 표시 등)
                                 </p>
                             </div>
                         </div>
 
                         {/* 구분선 */}
-                        <hr className="border-t border-white/20" />
+                        <hr className="border-t border-white/20"/>
 
                         {/* 우수 사례 */}
+
+                        {/*<div className="relative inline-flex justify-start items-center gap-2.5">*/}
+                        {/*    <div*/}
+                        {/*        className="w-80 justify-start text-zinc-400 text-base font-normal font-['Sora'] leading-relaxed"> GT*/}
+                        {/*        만나고 내 기획 인생 180도 달라진 썰 푼다. (GD 아님)*/}
+                        {/*    </div>*/}
+                        {/*    <img className="w-4 h-4 left-[4px] top-[5px] absolute" src="https://placehold.co/16x16"/>*/}
+                        {/*</div>*/}
+
                         <div className="space-y-2">
-                            <h4 className="text-white text-lg font-bold font-['Chakra_Petch']">
+                            <h4 className="text-white text-lg font-bold font-chakra-petch">
                                 우수 사례
                             </h4>
-                            <div className="flex items-center gap-2 text-gray-300 text-sm">
+                            <div className="w-80 justify-start text-zinc-400 text-base font-normal flex items-center gap-2 ">
                                 <Image
                                     src="https://c.animaapp.com/aIMdOiel/img/107003-4-1@2x.png"
                                     alt="link icon"
                                     width={16}
                                     height={16}
                                 />
-                                <span className="underline">
-          GT 만나고 내 기획 인생 180도 달라진 썰 푼다. (GD 아님)
-        </span>
+                                <span className="">
+                                      GT 만나고 내 기획 인생 180도 달라진 썰 푼다. (GD 아님)
+                                    </span>
                             </div>
                         </div>
+
+
                     </CardContent>
                 </Card>
 
@@ -345,7 +397,7 @@ function TeamDetailCard() {
                     <CardContent className="pt-1 pb-4 ">
                         {/* 상단 프로필 */}
                         <div className="flex items-start justify-between mb-6">
-                            <div className="flex flex-col items-start">
+                        <div className="flex flex-col items-start">
                                 <Image
                                     src="https://c.animaapp.com/aIMdOiel/img/image-4@2x.png"
                                     alt="reviewer"
@@ -375,9 +427,10 @@ function TeamDetailCard() {
                         />
 
                         {/* 리뷰 텍스트 */}
-                        <p className="text-white leading-relaxed">
-                            해당 내용 기획자 초보라면 특히나 꼭 읽어봐야 할 내용입니다...
-                        </p>
+                        <div
+                            className="w-96 justify-start text-white text-xl font-semibold font-chakra-petch  uppercase leading-loose">해당
+                            내용 기획자 초보라면 특히나 꼭 읽어봐야 할 내용입니다 ~! 기초 다지기를 할때 매우 좋으니 꼭 읽고 똑똑하게 기획 하시기 바랍니다 :)
+                        </div>
                     </CardContent>
                 </Card>
 
@@ -387,8 +440,8 @@ function TeamDetailCard() {
 }
 
 function Footer() {
-  return (
-    <footer className="relative bg-transparent border-t border-white/15">
+    return (
+        <footer className="relative bg-transparent border-t border-white/15">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Description */}
@@ -413,7 +466,8 @@ function Footer() {
                   width={204}
                   height={69}
                 />
-                <span className="absolute top-2 left-16 text-gray-400 text-sm">Get it on</span>
+
+                <span className="absolute top-2 left-16 text-zinc-400 font-sora  text-sm">Get it on</span>
                 <Image
                   src="https://c.animaapp.com/aIMdOiel/img/group-131463@2x.png"
                   alt="app store text"
@@ -430,35 +484,35 @@ function Footer() {
                 />
               </div>
 
-              <div className="relative">
-                <Image
-                  src="https://c.animaapp.com/aIMdOiel/img/rectangle-176-1.svg"
-                  alt="google play"
-                  width={184}
-                  height={69}
-                />
-                <span className="absolute top-2 left-14 text-gray-400 text-sm">Get it on</span>
-                <Image
-                  src="https://c.animaapp.com/aIMdOiel/img/group-131465@2x.png"
-                  alt="google play text"
-                  width={98}
-                  height={21}
-                  className="absolute bottom-4 left-14"
-                />
-                <Image
-                  src="https://c.animaapp.com/aIMdOiel/img/group-131466@2x.png"
-                  alt="google play"
-                  width={33}
-                  height={40}
-                  className="absolute top-3 left-5"
-                />
-              </div>
+                <div className="relative">
+                    <Image
+                        src="https://c.animaapp.com/aIMdOiel/img/rectangle-176-1.svg"
+                        alt="google play"
+                        width={184}
+                        height={69}
+                    />
+                    <span className="absolute top-2 left-16 text-zinc-400 font-sora  text-sm">Get it on</span>
+                    <Image
+                        src="https://c.animaapp.com/aIMdOiel/img/group-131465@2x.png"
+                        alt="google play text"
+                        width={98}
+                        height={21}
+                        className="absolute bottom-4 left-14"
+                    />
+                    <Image
+                        src="https://c.animaapp.com/aIMdOiel/img/group-131466@2x.png"
+                        alt="google play"
+                        width={33}
+                        height={40}
+                        className="absolute top-3 left-5"
+                    />
+                </div>
             </div>
           </div>
 
-          {/* Useful Links */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-6">USEFUL LINKS</h3>
+            {/* Useful Links */}
+            <div>
+                <h3 className="text-white text-lg font-semibold mb-6">USEFUL LINKS</h3>
             <div className="text-gray-400 space-y-2">
               <div>Home</div>
               <div>About Us</div>
@@ -493,25 +547,7 @@ function Footer() {
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-white/15 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-8">
-              <span className="text-gray-400">Privacy policy</span>
-              <span className="text-gray-400">|</span>
-              <span className="text-gray-400">Terms & Conditions</span>
-            </div>
 
-            <span className="text-gray-400">©Designthemes all rights Reserved</span>
-
-            <Image
-              src="https://c.animaapp.com/aIMdOiel/img/group-131478@2x.png"
-              alt="social media"
-              width={255}
-              height={61}
-            />
-          </div>
-        </div>
       </div>
     </footer>
   );
