@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Chakra_Petch, Sora } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -23,6 +24,7 @@ const sora = Sora({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
+
 
 export const metadata: Metadata = {
   title: "Create Next App",

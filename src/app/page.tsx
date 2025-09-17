@@ -288,7 +288,7 @@ function TeamDetailCard() {
                 <div className="space-y-2">
                     <div className="flex items-center gap-4">
                         <div
-                            className="justify-start text-white text-3xl font-bold font-chakra-petch uppercase leading-10">진행
+                            className="justify-start text-white text-3xl font-bold font-chakra-korean uppercase leading-10">진행
                             횟수
                         </div>
                         <div
@@ -296,12 +296,12 @@ function TeamDetailCard() {
                         </div>
                     </div>
                     <div className="flex items-center gap-4">
-                        <div className="justify-start text-white text-3xl font-bold font-chakra-petch  uppercase leading-10">평점</div>
+                        <div className="justify-start text-white text-3xl font-bold font-chakra-korean  uppercase leading-10">평점</div>
                         <div
                             className="justify-start text-[#A3FF32] text-3xl font-bold font-chakra-petch  uppercase leading-10">9.5
                         </div>
 
-                        <div className="justify-start text-neutral-600 text-2xl font-bold font-chakra-petch uppercase leading-10">/ 10</div>
+                        <div className="justify-start text-neutral-600 text-2xl font-bold font-chakra-korean uppercase leading-10">/ 10</div>
                         <Image
                             src="https://c.animaapp.com/aIMdOiel/img/star-3@2x.png"
                             alt="stars"
@@ -319,7 +319,7 @@ function TeamDetailCard() {
                     <CardContent className="pt-4 space-y-3">
                         {/* 제목 */}
                         <div
-                            className="justify-start text-white text-3xl font-bold font-chakra-petch uppercase leading-10">
+                            className="justify-start text-white text-3xl font-bold font-chakra-korean uppercase leading-10">
                             구성 스텝
                         </div>
 
@@ -327,7 +327,7 @@ function TeamDetailCard() {
                         {/* 스텝 리스트 */}
                         <div className="space-y-6">
                             <div className="flex gap-3">
-        <span className="text-white text-xl font-bold font-chakra-petch">
+        <span className="text-white text-xl font-bold font-chakra-korean">
           1)
         </span>
                                 <p
@@ -337,7 +337,7 @@ function TeamDetailCard() {
                             </div>
 
                             <div className="flex gap-3">
-        <span className="text-white text-xl font-bold font-chakra-petch">
+        <span className="text-white text-xl font-bold font-chakra-korean">
           2)
         </span>
                                 <p
@@ -347,7 +347,7 @@ function TeamDetailCard() {
                             </div>
 
                             <div className="flex gap-3">
-        <span className="text-white text-xl font-bold font-chakra-petch">
+        <span className="text-white text-xl font-bold font-chakra-korean">
           3)
         </span>
                                 <p
@@ -371,7 +371,7 @@ function TeamDetailCard() {
                         {/*</div>*/}
 
                         <div className="space-y-2">
-                            <h4 className="text-white text-lg font-bold font-chakra-petch">
+                            <h4 className="text-white text-lg font-bold font-chakra-korean">
                                 우수 사례
                             </h4>
                             <div className="w-80 justify-start text-zinc-400 text-base font-normal flex items-center gap-2 ">
@@ -428,7 +428,7 @@ function TeamDetailCard() {
 
                         {/* 리뷰 텍스트 */}
                         <div
-                            className="w-96 justify-start text-white text-xl font-semibold font-chakra-petch  uppercase leading-loose">해당
+                            className="w-96 justify-start text-white text-xl font-semibold font-chakra-korean uppercase leading-loose">해당
                             내용 기획자 초보라면 특히나 꼭 읽어봐야 할 내용입니다 ~! 기초 다지기를 할때 매우 좋으니 꼭 읽고 똑똑하게 기획 하시기 바랍니다 :)
                         </div>
                     </CardContent>
