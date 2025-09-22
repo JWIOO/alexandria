@@ -24,8 +24,8 @@ export default function HomePage() {
         >
           {/* Breadcrumb Content */}
           <div className="absolute top-[240px] left-1/2 transform -translate-x-1/2 text-center">
-            <h1 className="text-white text-4xl font-bold mb-4">알렉산드리아 도서관</h1>
-            <div className="flex items-center justify-center gap-2 text-white">
+            <h1 className="text-white text-6xl font-bold mb-4 leading-[70px]">알렉산드리아 도서관</h1>
+            <div className="flex items-center justify-center gap-2 text-white font-bold">
               <span>HOME</span>
               <Image
                 src="https://c.animaapp.com/aIMdOiel/img/group-131422@2x.png"
@@ -69,60 +69,64 @@ export default function HomePage() {
 
         {/* Search Bar Section */}
         <div className="px-4 py-12">
-            <div className="max-w-7xl mx-auto space-y-4">
+            <div className="max-w-[1450px] mx-auto space-y-4">
                 {/* 버튼 그룹 */}
                 <div className="flex gap-2">
                     {/* 필수형 드롭다운 */}
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <div
-                                className="flex items-center w-40 h-14 cursor-pointer bg-stone-900/60 border-t border-b border-white/20 backdrop-blur-[6px] px-4">
-                                <span className="text-white text-base font-normal font-sora">필수형</span>
-                                <Image
-                                    src="https://c.animaapp.com/aIMdOiel/img/vector.svg"
-                                    alt="dropdown"
-                                    width={20}
-                                    height={15}
-                                    className="ml-2"
-                                />
+                            <div className="px-6 py-3 bg-stone-900 border-b border-neutral-700 inline-flex justify-between items-center gap-4 cursor-pointer w-40">
+                                <div className="text-white text-base font-normal font-sora">필수형</div>
+                                <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-t-[8px] border-l-transparent border-r-transparent border-t-[#A3FF32]"></div>
                             </div>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent className="w-40 bg-[#1c1e18]/95 border border-white/20">
-                            <DropdownMenuItem className="text-white">PXO-103</DropdownMenuItem>
-                            <DropdownMenuItem className="text-white">PXO116-2018</DropdownMenuItem>
-                            <DropdownMenuItem className="text-white">기타</DropdownMenuItem>
+                        <DropdownMenuContent className="w-40 bg-stone-900 border-neutral-700 shadow-lg p-0">
+                            <DropdownMenuItem className="px-6 py-3 bg-stone-900 border-b border-neutral-700 flex justify-start items-center hover:bg-stone-800 cursor-pointer">
+                                <div className="text-white text-base font-normal font-sora">PXO-103</div>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem className="px-6 py-3 bg-stone-900 border-b border-neutral-700 flex justify-start items-center hover:bg-stone-800 cursor-pointer">
+                                <div className="text-white text-base font-normal font-sora">PXO116-2018</div>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem className="px-6 py-3 bg-stone-900 border-b border-neutral-700 flex justify-start items-center hover:bg-stone-800 cursor-pointer">
+                                <div className="text-white text-base font-normal font-sora">기타</div>
+                            </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
 
                     {/* 해시태그 드롭다운 */}
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <div
-                                className="flex items-center w-40 h-14 cursor-pointer bg-stone-900/60 border-t border-b border-white/20 backdrop-blur-[6px] px-4">
-                                <span className="text-white text-base font-normal font-sora">해시태그</span>
-                                <Image
-                                    src="https://c.animaapp.com/aIMdOiel/img/vector-1.svg"
-                                    alt="dropdown"
-                                    width={20}
-                                    height={15}
-                                    className="ml-2"
-                                />
+                            <div className="px-6 py-3 bg-stone-900 border-b border-neutral-700 inline-flex justify-between items-center gap-4 cursor-pointer w-40">
+                                <div className="text-white text-base font-normal font-sora">해시태그</div>
+                                <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-t-[8px] border-l-transparent border-r-transparent border-t-[#A3FF32]"></div>
                             </div>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent className="w-40 bg-[#1c1e18]/95 border border-white/20">
-                            <DropdownMenuItem className="text-white">#디자인</DropdownMenuItem>
-                            <DropdownMenuItem className="text-white">#실무</DropdownMenuItem>
-                            <DropdownMenuItem className="text-white">#자료조사</DropdownMenuItem>
-                            <DropdownMenuItem className="text-white">#기획</DropdownMenuItem>
-                            <DropdownMenuItem className="text-white">#Tool</DropdownMenuItem>
-                            <DropdownMenuItem className="text-white">#기초</DropdownMenuItem>
+                        <DropdownMenuContent className="w-40 bg-stone-900 border-neutral-700 shadow-lg p-0">
+                            <DropdownMenuItem className="px-6 py-3 bg-stone-900 border-b border-neutral-700 flex justify-start items-center hover:bg-stone-800 cursor-pointer">
+                                <div className="text-white text-base font-normal font-sora">#디자인</div>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem className="px-6 py-3 bg-stone-900 border-b border-neutral-700 flex justify-start items-center hover:bg-stone-800 cursor-pointer">
+                                <div className="text-white text-base font-normal font-sora">#실무</div>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem className="px-6 py-3 bg-stone-900 border-b border-neutral-700 flex justify-start items-center hover:bg-stone-800 cursor-pointer">
+                                <div className="text-white text-base font-normal font-sora">#자료조사</div>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem className="px-6 py-3 bg-stone-900 border-b border-neutral-700 flex justify-start items-center hover:bg-stone-800 cursor-pointer">
+                                <div className="text-white text-base font-normal font-sora">#기획</div>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem className="px-6 py-3 bg-stone-900 border-b border-neutral-700 flex justify-start items-center hover:bg-stone-800 cursor-pointer">
+                                <div className="text-white text-base font-normal font-sora">#Tool</div>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem className="px-6 py-3 bg-stone-900 border-b border-neutral-700 flex justify-start items-center hover:bg-stone-800 cursor-pointer">
+                                <div className="text-white text-base font-normal font-sora">#기초</div>
+                            </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
                 </div>
 
 
                 <div
-                    className="flex items-center w-full h-14 bg-stone-900/60 border-t border-b border-white/20 backdrop-blur-[6px] px-4">
+                    className="px-6 py-3 bg-stone-900 border-b border-neutral-700 flex items-center w-full">
                     <input
                         type="text"
                         placeholder="검색어를 입력하세요"
@@ -141,7 +145,7 @@ export default function HomePage() {
 
 
         {/* Main Content Cards */}
-        <div className="max-w-7xl mx-auto px-4 pb-20">
+        <div className="max-w-[1450px] mx-auto px-4 pb-20">
         <div className="space-y-48">
           {/* First Card */}
           <TeamDetailCard />
@@ -161,14 +165,14 @@ export default function HomePage() {
 }
 function TeamDetailCard() {
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-[2.5fr_1fr] gap-14">
+        <div className="grid grid-cols-1 xl:grid-cols-[2fr_1.2fr] gap-16">
             {/* 메인 콘텐츠 */}
-            <div className="flex flex-col gap-8 flex-1">
+            <div className="flex flex-col gap-8">
                 {/* 이미지 + 텍스트 2컬럼 */}
                 <div className="flex flex-col lg:flex-row gap-8">
                     {/* 이미지 */}
                     <div
-                        className="relative w-96 h-[498px] lg:w-[420px] overflow-hidden bg-cover bg-center flex-shrink-0"
+                        className="relative w-full h-[498px] lg:w-[420px] overflow-hidden bg-cover bg-center flex-shrink-0"
                         style={{
                             backgroundImage:
                                 "url('https://c.animaapp.com/aIMdOiel/img/image-3@2x.png')",
@@ -224,7 +228,7 @@ function TeamDetailCard() {
                         {/*    [기획 TOOL] 가시화 잘 보이지 않는 기획은, 휴지통으로 간다.*/}
                         {/*</h2>*/}
                         <div
-                            className="justify-start w-[505px] text-white text-5xl font-bold font-['Pretendard'] uppercase  leading-tight">[기획
+                            className="w-[505px] justify-start text-white text-5xl font-bold font-chakra-korean uppercase leading-tight">[기획
                             Tool] 가시화 : 잘 보이지 않는 기획은, 휴지통으로 간다.
                         </div>
 
@@ -313,9 +317,9 @@ function TeamDetailCard() {
             </div>
 
             {/* 사이드바 */}
-            <div className="space-y-5 w-96 h-96">
+            <div className="space-y-5">
                 {/* Steps Card */}
-                <Card className="bg-[#111410] border border-white/15 rounded-none">
+                <Card className="bg-[#111410] border border-white/15 rounded-none w-full ">
                     <CardContent className="pt-4 space-y-3">
                         {/* 제목 */}
                         <div
@@ -327,9 +331,9 @@ function TeamDetailCard() {
                         {/* 스텝 리스트 */}
                         <div className="space-y-6">
                             <div className="flex gap-3">
-        <span className="text-white text-xl font-bold font-chakra-korean">
-          1)
-        </span>
+                        <span className="text-white text-xl font-bold font-chakra-korean">
+                          1)
+                        </span>
                                 <p
                                     className="justify-start text-neutral-400 text-base font-normal font-sora leading-relaxed">[도식화]
                                     잘 보이는 기획은 도형을 가진다 (상하/좌우 배치, 방향, 기호, 색깔 등
@@ -337,19 +341,19 @@ function TeamDetailCard() {
                             </div>
 
                             <div className="flex gap-3">
-        <span className="text-white text-xl font-bold font-chakra-korean">
-          2)
-        </span>
-                                <p
+                            <span className="text-white text-xl font-bold font-chakra-korean">
+                              2)
+                            </span>
+                                                    <p
                                     className="justify-start text-neutral-400 text-base font-normal font-sora leading-relaxed">[그래프]
                                     잘 보이는 기획은 그래프를 가진다. (원, 연속, 선, 막대, 지표, 비교 등)
                                 </p>
                             </div>
 
-                            <div className="flex gap-3">
-        <span className="text-white text-xl font-bold font-chakra-korean">
-          3)
-        </span>
+                                                <div className="flex gap-3">
+                            <span className="text-white text-xl font-bold font-chakra-korean">
+                              3)
+                            </span>
                                 <p
                                     className="justify-start text-neutral-400 text-base font-normal font-sora leading-relaxed">[강조화]
                                     잘 보이는 기획은 포인트를 가진다. (배경 box, 밑줄, 빨간색, 볼드, 크기, 표시 등)
@@ -371,19 +375,19 @@ function TeamDetailCard() {
                         {/*</div>*/}
 
                         <div className="space-y-2">
-                            <h4 className="text-white text-lg font-bold font-chakra-korean">
+                            <h4 className="text-white text-xl font-bold font-chakra-korean leading-loose">
                                 우수 사례
                             </h4>
-                            <div className="justify-start text-zinc-400 text-base font-normal flex items-center gap-2 ">
+                            <div className="inline-flex items-center gap-2 cursor-pointer group">
                                 <Image
                                     src="https://c.animaapp.com/aIMdOiel/img/107003-4-1@2x.png"
                                     alt="link icon"
                                     width={16}
                                     height={16}
                                 />
-                                <span className="">
-                                      GT 만나고 내 기획 인생 180도 달라진 썰 푼다. (GD 아님)
-                                    </span>
+                                <div className="text-zinc-400 text-base font-normal font-sora leading-relaxed group-hover:text-white group-hover:underline transition-all">
+                                    GT 만나고 내 기획 인생 180도 달라진 썰 푼다. (GD 아님)
+                                </div>
                             </div>
                         </div>
 
@@ -394,7 +398,7 @@ function TeamDetailCard() {
 
                 {/* Review Card */}
                 <Card className="bg-[#111410] border-white/15 rounded-none">
-                    <CardContent className="pt-1 pb-4 ">
+                    <CardContent className="pt-1  ">
                         {/* 상단 프로필 */}
                         <div className="flex items-start justify-between mb-6">
                         <div className="flex flex-col items-start">
@@ -405,7 +409,19 @@ function TeamDetailCard() {
                                     height={120}
                                 />
                                 <h4 className="mt-4 text-white text-xl font-semibold">이혜인</h4>
-                                <p className="text-gray-400 text-sm">7기 브랜드팀</p>
+                            <div className="flex items-center gap-2">
+
+                                <p className="text-gray-400 text-sm">7기 브랜드팀
+                                </p>
+                                <Image
+                                    src="/grey-arrow.png"
+                                    alt="unit arrow"
+                                    width={44}
+                                    height={7}
+                                />
+                            </div>
+
+
                             </div>
                             <Image
                                 src="https://c.animaapp.com/aIMdOiel/img/--1.svg"
@@ -423,12 +439,14 @@ function TeamDetailCard() {
                             alt="stars"
                             width={205}
                             height={16}
-                            className="mb-4"
+                            className="mb-5"
                         />
 
                         {/* 리뷰 텍스트 */}
                         <div
-                            className="justify-start text-white text-xl font-semibold font-chakra-korean uppercase leading-loose">해당
+                            className="justify-start text-white text-xl font-semibold uppercase leading-normal"
+                            style={{ fontFamily: 'Pretendard' }}
+                        >해당
                             내용 기획자 초보라면 특히나 꼭 읽어봐야 할 내용입니다 ~! 기초 다지기를 할때 매우 좋으니 꼭 읽고 똑똑하게 기획 하시기 바랍니다 :)
                         </div>
                     </CardContent>
