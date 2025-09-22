@@ -378,14 +378,15 @@ function TeamDetailCard() {
                             <h4 className="text-white text-xl font-bold font-chakra-korean leading-loose">
                                 우수 사례
                             </h4>
-                            <div className="inline-flex items-center gap-2 cursor-pointer group">
+                            <div className="relative inline-flex items-start  gap-1  cursor-pointer group">
                                 <Image
                                     src="https://c.animaapp.com/aIMdOiel/img/107003-4-1@2x.png"
                                     alt="link icon"
                                     width={16}
                                     height={16}
+                                    className="align-top mt-2"
                                 />
-                                <div className="text-zinc-400 text-base font-normal font-sora leading-relaxed group-hover:text-white group-hover:underline transition-all">
+                                <div className="text-zinc-400 text-base font-normal font-sora leading-relaxed group-hover:text-white group-hover:underline transition-all ">
                                     GT 만나고 내 기획 인생 180도 달라진 썰 푼다. (GD 아님)
                                 </div>
                             </div>
@@ -485,13 +486,13 @@ function Footer() {
                   height={69}
                 />
 
-                <span className="absolute top-2 left-16 text-zinc-400 font-sora  text-sm">Get it on</span>
+                <span className="absolute top-2 left-16 text-zinc-400 font-sora text-xs">Get it on</span>
                 <Image
                   src="https://c.animaapp.com/aIMdOiel/img/group-131463@2x.png"
                   alt="app store text"
                   width={105}
                   height={21}
-                  className="absolute bottom-4 left-16"
+                  className="absolute bottom-2 left-16"
                 />
                 <Image
                   src="https://c.animaapp.com/aIMdOiel/img/group-131462@2x.png"
@@ -509,13 +510,13 @@ function Footer() {
                         width={184}
                         height={69}
                     />
-                    <span className="absolute top-2 left-16 text-zinc-400 font-sora  text-sm">Get it on</span>
+                    <span className="absolute top-2 left-14 text-zinc-400 font-sora text-xs">Get it on</span>
                     <Image
                         src="https://c.animaapp.com/aIMdOiel/img/group-131465@2x.png"
                         alt="google play text"
                         width={98}
                         height={21}
-                        className="absolute bottom-4 left-14"
+                        className="absolute bottom-2 left-14"
                     />
                     <Image
                         src="https://c.animaapp.com/aIMdOiel/img/group-131466@2x.png"
